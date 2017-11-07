@@ -112,11 +112,13 @@
 
 					<!-- Start edit here  -->
 					Write something here.We have studied three techniques:
-					(1)Pitch Analysis 
-					(2)Formant Analysis (3) Waveform Comparison
+					(1)Pitch Analysis <br>
+					(2)Formant Analysis <br>
+					(3) Waveform Comparison<br>
 					(1)Pitch Analysis-> The algorithm used in it as follows, it takes the average pitches of all the voices present in the given sample and compares with the average pitch of the reference voice which is to be recognized.
 					we used audioread to read the reference file and get the sampling rate and the number of samples.Then choose segments every 30ms of the signal and calculate the total no. of segments(nFrames) and F0=zeros(1:nFrames), then choose segment(i), apply butterworth filters on that segments and then autocorrelation method, after that calculate pitch F0(i), we did the same thing for all segments and take average of all pitches to get average pitch.
-
+					<br>
+					(1)Formant Analysis->Formant is defined as the spectral peaks of the sound spectrum and in formant analysis PSD(power spectral density) of each voice of the sample and reference voice is calculated, considering only 3-4 peaks, their positions and peak differences is calculated, if these quantities matched with the reference signal, then the reference signal is identified in the sample.
 					<!-- Stop edit here -->
 
 				</div>
@@ -159,14 +161,14 @@
 					</div>
 				</div>
 				<div class="subsection">
-					<div class="heading">4.2 Future Extensions (1) Speaker Recognition can be used for Security purposes, Control access.<br>
-					(2) By recognizing particular person's voice,we can also find the involvement of this person in meeting or in debate. Like in a Meeting, we can record all the voice data that the head person said.<br>
-					(3) In Singer Replacement or actor voice replacement can be done by our technique, as we are rearranging the all data voices in descending order of their matching with the referenc voice.<br>
+					<div class="heading">4.2 Future Extensions 
 					</div>
 					<div class="text">
 
 						<!-- Start edit here  -->
-						Write something here.
+						Write something here.(1) Speaker Recognition can be used for Security purposes, Control access.<br>
+					(2) By recognizing particular person's voice,we can also find the involvement of this person in meeting or in debate. Like in a Meeting, we can record all the voice data that the head person said.<br>
+					(3) In Singer Replacement or actor voice replacement can be done by our technique, as we are rearranging the all data voices in descending order of their matching with the referenc voice.<br>
 						<!-- Stop edit here -->
 
 					</div>
