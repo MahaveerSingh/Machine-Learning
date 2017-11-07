@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="title">PROJECT TITLE GOES HERE</div>
+			<div class="title">Speaker Recognition</div>
 
 			<div class="authors">
 
@@ -112,9 +112,10 @@
 
 					<!-- Start edit here  -->
 					Write something here.We have studied three techniques:
-					(1)Pitch Analysis (2)Formant Analysis (3) Waveform Comparison
+					(1)Pitch Analysis 
+					(2)Formant Analysis (3) Waveform Comparison
 					(1)Pitch Analysis-> The algorithm used in it as follows, it takes the average pitches of all the voices present in the given sample and compares with the average pitch of the reference voice which is to be recognized.
-					we used audioread to read the reference file and get the sampling rate and the number of samples.Then choose segments every 30ms of the signal and calculate the total no. of segments(nFrames) and F0=zeros(1:nFrames), then choose segment(i), apply butterworth
+					we used audioread to read the reference file and get the sampling rate and the number of samples.Then choose segments every 30ms of the signal and calculate the total no. of segments(nFrames) and F0=zeros(1:nFrames), then choose segment(i), apply butterworth filters on that segments and then autocorrelation method, after that calculate pitch F0(i), we did the same thing for all segments and take average of all pitches to get average pitch.
 
 					<!-- Stop edit here -->
 
