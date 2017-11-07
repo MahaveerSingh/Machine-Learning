@@ -37,6 +37,8 @@
 
 					<!-- Start edit here  -->
 					This is the place where you have to write your abstract. Write a brief description about your work here. Mention the features that you have used in your work and their respective motivations.
+					Speaker Recognition systems have become very important these days because this technique makes it possible to use the speaker's voice to verify their identity and control access to many services.
+					We are using pitch and Power Spectral Density as features, which will be used in Pitch analysis, Formant analysis and Waveform comparison.
 					<!-- Stop edit here -->
 
 				</div>
@@ -69,7 +71,7 @@
 
 						<!-- Start edit here  -->
 						Block diagram of the system. All images must be put in a Pictures folder. An example image
-						<img src="example.png" alt="This text displays when the image is umavailable" width="300px" height=""/>
+						<img src="block.png" alt="This text displays when the image is umavailable" width="300px" height=""/>
 						<!-- Stop edit here -->
 
 					</div>
@@ -111,14 +113,14 @@
 				<div class="text">
 
 					<!-- Start edit here  -->
-					Write something here.We have studied three techniques:
+					Write something here.We have studied three techniques:<br>
 					(1)Pitch Analysis <br>
 					(2)Formant Analysis <br>
 					(3) Waveform Comparison<br>
 					(1)Pitch Analysis-> The algorithm used in it as follows, it takes the average pitches of all the voices present in the given sample and compares with the average pitch of the reference voice which is to be recognized.
 					we used audioread to read the reference file and get the sampling rate and the number of samples.Then choose segments every 30ms of the signal and calculate the total no. of segments(nFrames) and F0=zeros(1:nFrames), then choose segment(i), apply butterworth filters on that segments and then autocorrelation method, after that calculate pitch F0(i), we did the same thing for all segments and take average of all pitches to get average pitch.
 					<br>
-					(1)Formant Analysis->Formant is defined as the spectral peaks of the sound spectrum and in formant analysis PSD(power spectral density) of each voice of the sample and reference voice is calculated, considering only 3-4 peaks, their positions and peak differences is calculated, if these quantities matched with the reference signal, then the reference signal is identified in the sample.
+					(2)Formant Analysis->Formant is defined as the spectral peaks of the sound spectrum and in formant analysis PSD(power spectral density) of each voice of the sample and reference voice is calculated, considering only 3-4 peaks, their positions and peak differences is calculated, if these quantities matched with the reference signal, then the reference signal is identified in the sample.We read the reference file, get sampling rate and sampled data.Then applied Yule Walker method for PSD(Power Spectral Density) P, then convert P to db and calculate normalized frequency axis, calculate difference between consequ
 					<!-- Stop edit here -->
 
 				</div>
