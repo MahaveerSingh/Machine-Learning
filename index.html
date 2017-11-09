@@ -34,13 +34,14 @@
 			<div class="section">
 				<div class="heading">Abstract</div>
 				<div class="text">
-
+			 <font size="3">
 					<!-- Start edit here  -->
 					
 					Speaker Recognition systems have become very important these days because this technique makes it possible to use the speaker's voice to verify their identity and control access to many services.
 					We are using pitch and Power Spectral Density as features, which will be used in Pitch analysis, Formant analysis and Waveform comparison.
-					<!-- Stop edit here -->
-
+					We have used Pitch and Power Spectral Density(PSD) as features. The motivation behind taking Pitch as feature was it is calculated by taking taking average pitches of all the segments.  The average pitch reduced the number of trained files to be compared than formant analysis.<br/>
+					But formant analysis produced more accurate results, compare to pitch analysis, so PSD is taken as feature.
+					</font> 
 				</div>
 			</div>
 
@@ -49,7 +50,9 @@
 				<div class="text">
 
 					<!-- Start edit here  -->
+					 <font size="3">
 					Our project deals with problem of identifying voice of a particular speaker from a given set of sample- voices and arrange them in descending order of resembalance with reference voice, given the speech is same for all the speakers.
+					 </font> 
 					<!-- Stop edit here -->
 
 				</div>
@@ -59,7 +62,9 @@
 					<div class="text">
 
 						<!-- Start edit here  -->
+						 <font size="3"> 
 						Arranging the all data sample voices in descending order of their matching with the reference voice.It aims to build an algorithm, that can with relative ease, can detect the speaker among the various other speaker. 
+						 </font> 
 						<!-- Stop edit here -->
 
 					</div>
@@ -70,8 +75,10 @@
 					<div class="image">
 
 						<!-- Start edit here  -->
+						 <font size="3">
 						Block diagram of the system->
-						<img src="block.png" alt="This text displays when the image is umavailable" width="1000px" height="300"/>
+					 </font>
+	<img src="block.png" alt="This text displays when the image is umavailable" width="1000px" height="300"/>
 						<!-- Stop edit here -->
 
 					</div>
@@ -81,7 +88,9 @@
 					<div class="text">
 
 						<!-- Start edit here  -->
-						Write something here.
+						
+						
+						
 						<!-- Stop edit here -->
 
 					</div>
@@ -91,7 +100,10 @@
 					<div class="text">
 
 						<!-- Start edit here  -->
-						Describe your approach briefly here.
+						 <font size="3">
+						We used Waveform Comparison which includes Pitch analysis and formant analysis. Waveform comparison determined based on the comparison between pitch and formant analysis. Reference file is compared with all others based on average pitch. Top 12 matches then compared by the differences on their formant peak vectors.
+						 </font> 
+						
 						<!-- Stop edit here -->
 
 					</div>
@@ -99,7 +111,7 @@
 				<div class="subsection">
 					<div class="heading">1.5 Report Organization</div>
 					<div class="text">
-
+					 <font size="3">
 						<!-- Start edit here  -->
 						We have divided our project into 3 different sections :
                     <br />(1)Pitch Analysis  
@@ -143,6 +155,7 @@
 					</div>									
 													
  <!-- Stop edit here -->
+					</font>
 
 					</div>
 				</div>
@@ -151,18 +164,20 @@
 			<div class="section">
 				<div class="heading">2. Proposed Approach</div>
 				<div class="text">
-
+				 <font size="3">
 					<!-- Start edit here  -->
 					We have studied three techniques:<br>
-					(1)Pitch Analysis <br>
+					 <font color="bold"> (1)Pitch Analysis <br>
 					(2)Formant Analysis <br>
-					(3) Waveform Comparison<br>
-					(1)Pitch Analysis-> The algorithm used in it as follows, it takes the average pitches of all the voices present in the given sample and compares with the average pitch of the reference voice which is to be recognized.
+					(3) Waveform Comparison<br></font> 
+					
+					(1)<font color="blue">Pitch Analysis-></font> The algorithm used in it as follows, it takes the average pitches of all the voices present in the given sample and compares with the average pitch of the reference voice which is to be recognized.
 					we used audioread to read the reference file and get the sampling rate and the number of samples.Then choose segments every 30ms of the signal and calculate the total no. of segments(nFrames) and F0=zeros(1:nFrames), then choose segment(i), apply butterworth filters on that segments and then autocorrelation method, after that calculate pitch F0(i), we did the same thing for all segments and take average of all pitches to get average pitch.
 					<br>
-					(2)Formant Analysis->Formant is defined as the spectral peaks of the sound spectrum and in formant analysis PSD(power spectral density) of each voice of the sample and reference voice is calculated, considering only 3-4 peaks, their positions and peak differences is calculated, if these quantities matched with the reference signal, then the reference signal is identified in the sample.We read the reference file, get sampling rate and sampled data.Then applied Yule Walker method for PSD(Power Spectral Density) P, then convert P to db and calculate normalized frequency axis, calculate difference between consequ
+					(2)<font color="blue">Formant Analysis-></font>Formant is defined as the spectral peaks of the sound spectrum and in formant analysis PSD(power spectral density) of each voice of the sample and reference voice is calculated, considering only 3-4 peaks, their positions and peak differences is calculated, if these quantities matched with the reference signal, then the reference signal is identified in the sample.We read the reference file, get sampling rate and sampled data.Then applied Yule Walker method for PSD(Power Spectral Density) P, then convert P to db and calculate normalized frequency axis, calculate difference between consequ
 					<!-- Stop edit here -->
-
+		
+		 </font> 
 				</div>
 			</div>
 
@@ -171,11 +186,11 @@
 				<div class="subsection">
 					<div class="heading">3.1 Dataset Description</div>
 					<div class="text">
-
+						 <font size="3">
 						<!-- Start edit here  -->
 						We recorded around 120 voices of all students of our class and used it as data set, refrence voice is taken by our wish.
 						<!-- Stop edit here -->
-
+					 </font> 
 					</div>
 				</div>
 				<div class="subsection">
@@ -208,14 +223,14 @@
 				<div class="subsection">
 					<div class="heading">4.2 Future Extensions 
 					</div>
-					<div class="text"> 
-
+					<div class="text">
+					 <font size="3">
 						<!-- Start edit here  -->
 					(1) Speaker Recognition can be used for Security purposes, Control access.<br>
 					(2) By recognizing particular person's voice,we can also find the involvement of this person in meeting or in debate. Like in a Meeting, we can record all the voice data that the head person said.<br>
 					(3) In Singer Replacement or actor voice replacement can be done by our technique, as we are rearranging the all data voices in descending order of their matching with the referenc voice.<br>
 						<!-- Stop edit here -->
-
+				 </font> 
 					</div>
 				</div>
 			</div>
