@@ -16,12 +16,12 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="title">Speaker Recognition</div>
+			<div class="title">  <p><font size="6"><u>Speaker Recognition</u></font></p></div>
 
 			<div class="authors">
 
 				<!-- Start edit here  -->
-				<p>Sanjeev Didel, Roll No.: 150108031, Branch: EEE</p>; &nbsp; &nbsp;
+				<p><b>Sanjeev Didel, Roll No.: 150108031</b>, Branch: EEE</p>; &nbsp; &nbsp;
 				<p>Aman Kumar, Roll No.: 150108003, Branch: EEE</p>; &nbsp; &nbsp;
 				<p>Deepak Meghwal, Roll No.: 150108009, Branch: EEE</p>; &nbsp; &nbsp;
 				<p>Mahaveer Gahlot, Roll No.: 150108020, Branch: EEE</p>; &nbsp; &nbsp;
@@ -36,7 +36,7 @@
 				<div class="text">
 
 					<!-- Start edit here  -->
-					This is the place where you have to write your abstract. Write a brief description about your work here. Mention the features that you have used in your work and their respective motivations.
+					
 					Speaker Recognition systems have become very important these days because this technique makes it possible to use the speaker's voice to verify their identity and control access to many services.
 					We are using pitch and Power Spectral Density as features, which will be used in Pitch analysis, Formant analysis and Waveform comparison.
 					<!-- Stop edit here -->
@@ -49,7 +49,7 @@
 				<div class="text">
 
 					<!-- Start edit here  -->
-					Write a introduction to your project here. Our project deals with problem of identifying voice of a particular speaker from a given set of sample- voices and arrange them in descending order of resembalance with reference voice, given the speech is same for all the speakers.
+					Our project deals with problem of identifying voice of a particular speaker from a given set of sample- voices and arrange them in descending order of resembalance with reference voice, given the speech is same for all the speakers.
 					<!-- Stop edit here -->
 
 				</div>
@@ -59,7 +59,7 @@
 					<div class="text">
 
 						<!-- Start edit here  -->
-						Write something here.Arranging the all data sample voices in descending order of their matching with the reference voice.It aims to build an algorithm, that can with relative ease, can detect the speaker among the various other speaker. 
+						Arranging the all data sample voices in descending order of their matching with the reference voice.It aims to build an algorithm, that can with relative ease, can detect the speaker among the various other speaker. 
 						<!-- Stop edit here -->
 
 					</div>
@@ -70,7 +70,7 @@
 					<div class="image">
 
 						<!-- Start edit here  -->
-						Block diagram of the system. All images must be put in a Pictures folder. An example image
+						Block diagram of the system->
 						<img src="block.png" alt="This text displays when the image is umavailable" width="1000px" height="300"/>
 						<!-- Stop edit here -->
 
@@ -101,8 +101,48 @@
 					<div class="text">
 
 						<!-- Start edit here  -->
-						Write something here.
+						We have divided our project into 3 different sections :
+                    <br />(1)Pitch Analysis  
+                    <br />(2)Formant Analysis 
+                    <br />(3) Waveform Comparison <br />
+						 
+                        <br />(1)Pitch Analysis :- <br />The algorithm used in it as follows, it takes the average pitches of all the voices present in the given sample and compares with the average pitch of the reference voice which is to be recognized<br />
+						          &nbsp&nbsp&nbsp&nbsp&nbsp The algorithm used in it as follows, it takes the average pitches of all the voices present in the given sample and compares with the average pitch of the reference voice which is to be recognized. we used audioread to read the reference file and get the sampling rate and the number of samples.Then choose segments every 30ms of the signal and calculate the total no. of segments(nFrames) and F0=zeros(1:nFrames), then choose segment(i), apply butterworth filters on that segments and then autocorrelation method, after that calculate pitch F0(i), we did the same thing for all segments and take average of all pitches to get average pitch.<br />
+                                  
+											 
+						    <br />a)Butterworth filter :-<br />&nbsp&nbsp&nbsp&nbsp&nbsp The Butterworth filter is a type of signal processing filter designed to have as flat a frequency response as possible in the passband. It is also referred to as a maximally flat magnitude filter.As the Butterworth filter is maximally flat, this means that it is designed so that at zero frequency, the first 2n-1 derivatives for the power function with respect to frequency are zero.
+                            <br />Thus it is possible to derive the formula for the Butterworth filter frequency response:  <br />
+							<br />&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp |Vout|/|Vin|^2 = 1/(1+(f/fc)^2n)  
+							<br />&nbsp&nbsp&nbsp&nbsp&nbsp where,   f = frequency at which calculation is made,
+                            <br />&nbsp&nbsp&nbsp&nbsp&nbsp fo = the cut-off frequency( half power or -3dB frequency) ,
+                            <br />&nbsp&nbsp&nbsp&nbsp&nbsp Vin = input voltage,
+                            <br />&nbsp&nbsp&nbsp&nbsp&nbsp Vout = output voltage,
+                            <br />&nbsp&nbsp&nbsp&nbsp&nbsp n = number of elements in the filter
+							<br />&nbsp&nbsp&nbsp&nbsp&nbsp The equation can be re-written to give its more usual format. Here H(jω) is the transfer function and it is assumed the filter has no gain, i.e. it is not an active filter.
+							<br />&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp H(jw) = 1/(1+(w/wc)^2n)^1/2 <br />     
+							<br />&nbsp&nbsp&nbsp&nbsp&nbsp Where:   H(jω) = transfer function at angular frequency ω
+                                     <br />&nbsp&nbsp&nbsp&nbsp&nbsp ω = angular frequency and is equal to 2πf    
+									 <br />&nbsp&nbsp&nbsp&nbsp&nbsp ωo = cutoff frequency expressed as an angular value and is equal to 2πfo
+						    <br />&nbsp&nbsp&nbsp&nbsp&nbsp When wanting to express the loss of the Butterworth filter at any point, the Butterworth formula below can be used. This gives the attenuation in decibels at any point.
+							<br />&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp Adb = 10log(1+(w/wc)^2n)<br />
+							
+							<br />(b)Auto-correlation :-  <br />&nbsp&nbsp&nbsp&nbsp&nbsp "Autocorrelation" is used to compare a signal with a time-delayed version of itself. If a signal is periodic, then the signal will be perfectly correlated with a version of itself if the time-delay is an integer number of periods. That fact, along with related experiments, has implicated autocorrelation as a potentially important part of signal processing in human hearing.
+							                        <br />Mathematically, for a continuous signal, s(t), the autocorrelation, R(τ) is calculated using: 
+													<br />&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp R(τ) = 1/(tmax - tmin)∫s(t)s(t-τ)dt<br />
+				<div class="subsection">
+					<div class="heading">1.5 Report Organization</div>
+					<div class="subsection">
+					<div class="heading">1.2 Figure</div>
+					<div class="image">
+
+						<!-- Start edit here  -->
+						
+						<img src="pitch.png" alt="This text displays when the image is umavailable" width="1000px" height="700"/>
 						<!-- Stop edit here -->
+
+					</div>									
+													
+ <!-- Stop edit here -->
 
 					</div>
 				</div>
@@ -113,7 +153,7 @@
 				<div class="text">
 
 					<!-- Start edit here  -->
-					Write something here.We have studied three techniques:<br>
+					We have studied three techniques:<br>
 					(1)Pitch Analysis <br>
 					(2)Formant Analysis <br>
 					(3) Waveform Comparison<br>
@@ -133,7 +173,7 @@
 					<div class="text">
 
 						<!-- Start edit here  -->
-						We recorded around 120voices of all students of class
+						We recorded around 120 voices of all students of our class and used it as data set, refrence voice is taken by our wish.
 						<!-- Stop edit here -->
 
 					</div>
@@ -143,7 +183,9 @@
 					<div class="text">
 
 						<!-- Start edit here  -->
-						Write something here.
+						
+						
+						
 						<!-- Stop edit here -->
 
 					</div>
@@ -157,7 +199,8 @@
 					<div class="text">
 
 						<!-- Start edit here  -->
-						Write something here.
+						
+						
 						<!-- Stop edit here -->
 
 					</div>
@@ -168,7 +211,7 @@
 					<div class="text">
 
 						<!-- Start edit here  -->
-						Write something here.(1) Speaker Recognition can be used for Security purposes, Control access.<br>
+					(1) Speaker Recognition can be used for Security purposes, Control access.<br>
 					(2) By recognizing particular person's voice,we can also find the involvement of this person in meeting or in debate. Like in a Meeting, we can record all the voice data that the head person said.<br>
 					(3) In Singer Replacement or actor voice replacement can be done by our technique, as we are rearranging the all data voices in descending order of their matching with the referenc voice.<br>
 						<!-- Stop edit here -->
